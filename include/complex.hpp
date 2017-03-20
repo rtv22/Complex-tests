@@ -8,7 +8,7 @@ private:
 	double real;
 	double imaginary;
 public:
-	complex(double , double )
+	complex(double , double);
 	complex();
 	auto real() ->double;
     	auto imaginary() ->double;
