@@ -10,6 +10,15 @@ complex::complex(double a, double b)
 	imaginary = b;
 }
 
+double Complex::real()
+{
+	return real;
+}
+double Complex::imaginary()
+{
+	return imaginary;
+}
+
 void complex::set()
 {
 	cout << "Действительная часть КЧ: ";
