@@ -18,8 +18,8 @@ SCENARIO("copy", "[copy]")
 {
 	complex A(1, 1);
 	complex B(A);
-	REQUIRE(B.real_() == 1);
-	REQUIRE(B.imaginary_() == 1);
+	REQUIRE(B.r() == 1);
+	REQUIRE(B.i() == 1);
 }
 
 SCENARIO("mult", "[oper*]") 
