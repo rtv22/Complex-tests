@@ -27,4 +27,6 @@ public:
 	complex operator-=(complex&);
 	complex operator*=(complex&);
 	complex operator/=(complex&);
+	friend ostream& operator<<(ostream&, complex&);
+	friend istream& operator>>(istream&, complex &);
 };
