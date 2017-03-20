@@ -9,8 +9,7 @@ SCENARIO("coplex init", "[init]"){
 
 SCENARIO("params init", "[init with params]") 
 {
-	int init = 2;
-	complex num_1(init, init);
+	complex num_1(2, 2);
 	REQUIRE(num_1.r() == 2);
 	REQUIRE(num_1.i() == 2);
 }
