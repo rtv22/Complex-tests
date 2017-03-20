@@ -10,11 +10,11 @@ complex::complex(double a, double b)
 	imaginary = b;
 }
 
-double Complex::real()
+double Complex::r()
 {
 	return real;
 }
-double Complex::imaginary()
+double Complex::i()
 {
 	return imaginary;
 }
