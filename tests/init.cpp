@@ -1,4 +1,4 @@
-#include <matrix.hpp>
+#include <complex.hpp>
 #include <catch.hpp>
 
 SCENARIO("coplex init", "[init]"){
