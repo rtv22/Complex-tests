@@ -1,5 +1,7 @@
 complex::complex()
 {
+	imaginary = 0;
+	real = 0;
 }
 
 void complex::set()
