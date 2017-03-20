@@ -1,6 +1,6 @@
 #include "complex.hpp"
 
-Matrix::Matrix() : real(0), imaginary(0)
+Complex::Complex() : real(0), imaginary(0)
 {
 	
 }
