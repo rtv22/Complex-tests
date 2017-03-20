@@ -1,3 +1,5 @@
+#include "complex.hpp"
+
 complex::complex()
 {
 	imaginary = 0;
