@@ -10,11 +10,11 @@ complex::complex(double a, double b)
 	imaginary = b;
 }
 
-double Complex::r()
+double сomplex::r()
 {
 	return real;
 }
-double Complex::i()
+double сomplex::i()
 {
 	return imaginary;
 }
@@ -34,21 +34,21 @@ complex::complex(const complex& copy)
 	imaginary = copy.imaginary;
 }
 
-complex complex::operator*(const Complex& copy) {
+complex complex::operator*(const сomplex& copy) {
 	complex rez;
 	rez.real = real * copy.real;
 	rez.imaginary = imaginary * copy.imaginary;
 	return rez;
 }
 
-complex complex::operator/(const Complex& copyy){
+complex complex::operator/(const сomplex& copyy){
 	complex rez;
 	rez.real = real / copy.real;
 	rez.imaginary = imaginary / copy.imaginary;
 	return rez;
 }
 
-bool complex::operator==(const Complex& copy){
+bool complex::operator==(const сomplex& copy){
 	complex rez;
 	if (real == copy.real && imaginary == copy.imaginary){
 		cout << "complex_1 == complex_2";
@@ -57,7 +57,7 @@ bool complex::operator==(const Complex& copy){
 	return false;
 }
 
-complex complex::operator=(const Complex& copy){
+complex complex::operator=(const сomplex& copy){
 	real = copy.real;
 	imaginary = copy.imaginary;
 	return *this;
@@ -89,25 +89,25 @@ complex complex::sub(complex a) const
 	return complex(real - a.real, imaginary - a.imaginary);
 }
 
-complex complex::operator+=(const Complex& copy){
+complex complex::operator+=(const сomplex& copy){
 	real += copy.real;
 	imaginary += copy.imaginary;
 	return *this;
 }
 
-complex complex::operator-=(const Complex& copy){
+complex complex::operator-=(const сomplex& copy){
 	real -= copy.real;
 	imaginary -= copy.imaginary;
 	return *this;
 }
 
-complex complex::operator*=(const Complex& copy){
+complex complex::operator*=(const сomplex& copy){
 	real *= copy.real;
 	imaginary *= copy.imaginary;
 	return *this;
 }
 
-complex complex::operator/=(const Complex& copy){
+complex complex::operator/=(const сomplex& copy){
 	real /= copy.real;
 	imaginary /= copy.imaginary;
 	return *this;
