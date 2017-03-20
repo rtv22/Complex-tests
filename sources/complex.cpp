@@ -1,8 +1,13 @@
 #include "complex.hpp"
 
-Complex::Complex() : real(0), imaginary(0)
+complex::complex() : real(0), imaginary(0)
+{	
+}
+
+complex::complex(double a, double b)
 {
-	
+	real = a;
+	imaginary = b;
 }
 
 void complex::set()
