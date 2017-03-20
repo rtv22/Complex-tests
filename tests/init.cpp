@@ -14,73 +14,73 @@ SCENARIO("params init", "[init with params]")
 	REQUIRE(num_1.i() == 2);
 }
 
-SCENARIO("copy") 
+SCENARIO("copy", "[copy]") 
 {
-	TComplex A(1, 1);
-	TComplex B(A);
+	complex A(1, 1);
+	complex B(A);
 	REQUIRE(B.real_() == 1);
 	REQUIRE(B.imaginary_() == 1);
 }
 
-SCENARIO("*") 
+SCENARIO("mult", "[oper*]") 
 {
-	TComplex A(2, 0);
-	TComplex B(2, 0);
-	TComplex C(4, 0);
+	complex A(2, 0);
+	complex B(2, 0);
+	complex C(4, 0);
 	REQUIRE(A*B==C);
 }
 
-SCENARIO("/")
+SCENARIO("div", "oper/")
 {
-	TComplex A(4, 5);
-	TComplex B(4, 5);
-	TComplex C(1, 0);
+	complex A(4, 5);
+	complex B(4, 5);
+	complex C(1, 0);
 	REQUIRE(A/B==C);
 }
 
-SCENARIO("+=")
+SCENARIO("+=", "[oper+=]")
 {
-	TComplex A(1, 1);
-	TComplex B(1, 1);
-	TComplex C(2, 2);
+	complex A(1, 1);
+	complex B(1, 1);
+	complex C(2, 2);
 	REQUIRE((A+=B)==C);
 }
 
-SCENARIO("-=")
+SCENARIO("-=", "[oper-=]")
 {
-	TComplex A(2, 2);
-	TComplex B(2, 2);
-	TComplex C(0, 0);
+	complex A(2, 2);
+	complex B(2, 2);
+	complex C(0, 0);
 	REQUIRE((A-=B)==C);
 }
 
-SCENARIO("*=")
+SCENARIO("*=", "[oper*=]")
 {
-	TComplex A(0, 0);
-	TComplex B(0, 0);
-	TComplex C(0, 0);
+	complex A(0, 0);
+	complex B(0, 0);
+	complex C(0, 0);
 	REQUIRE((A*=B)==C);
 }
 
-SCENARIO("/=")
+SCENARIO("/=", "[oper/=]")
 {
-	TComplex A(1, 1);
-	TComplex B(1, 1);
-	TComplex C(1, 1);
+	complex A(1, 1);
+	complex B(1, 1);
+	complex C(1, 1);
 	REQUIRE((A/=B)==C);
 }
 
-SCENARIO("=")
+SCENARIO("=", "[oper=]")
 {
-	TComplex A(1, 1);
-	TComplex B = A;
+	complex A(1, 1);
+	complex B = A;
 	REQUIRE(A == B);
 }
 
-SCENARIO("==")
+SCENARIO("comp", "[oper==]")
 {
-	TComplex A(2, 2);
-	TComplex B(2, 2);
+	complex A(2, 2);
+	complex B(2, 2);
 	bool C;
 	if (A == B)
 		C = true;
