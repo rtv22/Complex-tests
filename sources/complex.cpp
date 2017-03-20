@@ -123,3 +123,14 @@ complex complex::div(int a) const
 {
 	return complex(real / a, imaginary / a);
 }
+
+ostream& operator <<(ostream& rez, complex& copy){
+	if (copy.imaginary > 0)
+	{
+		rez << copy.real << " + " << copy.imaginary << "*i" << endl;
+	}
+	else
+	{
+		rez << copy.real << " " << copy.imaginary << "*i" << endl;
+	}
+}
