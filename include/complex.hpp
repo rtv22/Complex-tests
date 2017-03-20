@@ -8,12 +8,10 @@ private:
 	double real;
 	double imaginary;
 public:
-	complex(double a, double b)
-	{
-		real = a;
-		imaginary = b;
-	}
+	complex(double , double )
 	complex();
+	auto real() ->double;
+    	auto imaginary() ->double;
 	void set();
 	void print(std::ostream&) const;
 	complex sum(complex) const;
