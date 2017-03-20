@@ -1,8 +1,5 @@
-#include <matrix.hpp>
+#include "matrix.hpp"
 #include <catch.hpp>
-#include <iostream>
-
-using namespace std;
 
 SCENARIO("coplex init", "[init]"){
   complex num_1;
