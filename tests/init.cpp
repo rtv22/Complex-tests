@@ -3,7 +3,7 @@
 
 SCENARIO("coplex init", "[init]"){
 	complex num_1;
-	EQUIRE (num_1.r() == 0);
+	REQUIRE (num_1.r() == 0);
 	REQUIRE (num_1.i() == 0);
 }
 
