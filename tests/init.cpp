@@ -5,16 +5,15 @@
 using namespace std;
 
 SCENARIO("coplex init", "[init]"){
-  Complex r, i;
-  REQUARE (r.real() == 0);
-  REQUARE (i.imaginary() == 0);
+  Complex num_1;
+  REQUARE (num_1.real() == 0);
+  REQUARE (num_1.imaginary() == 0);
 }
 
 SCENARIO("params init", "[init with params]") 
 {
 	int init = 2;
-	Complex r(init);
-  Complex i(init);
-	REQUIRE(r.real() == 2);
-	REQUIRE(i.imaginary() == 2);
+	Complex num_1(init);
+	REQUIRE(num_1.r() == 2);
+	REQUIRE(num_1.i() == 2);
 }
