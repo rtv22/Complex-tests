@@ -6,8 +6,8 @@ using namespace std;
 
 SCENARIO("coplex init", "[init]"){
   Complex num_1;
-  REQUARE (num_1.real() == 0);
-  REQUARE (num_1.imaginary() == 0);
+  REQUARE (num_1.r() == 0);
+  REQUARE (num_1.i() == 0);
 }
 
 SCENARIO("params init", "[init with params]") 
