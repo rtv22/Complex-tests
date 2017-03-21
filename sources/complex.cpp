@@ -139,7 +139,7 @@ ostream& operator <<(ostream& rez,const complex& copy){
 	}
 }
 
-istream& operator >> (istream& in, const complex& copy){
+istream& operator >> (istream& in, complex& copy){
 	in >> copy.real;
 	in >> copy.imaginary;
 	return in;
