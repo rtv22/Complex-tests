@@ -49,7 +49,7 @@ complex complex::operator/(const complex &copy)const{
 	return rez;
 }
 
-bool complex::operator==(const complex &copy)const{
+bool complex::operator==(const complex &copy){
 	complex rez;
 	if (real == copy.real && imaginary == copy.imaginary){
 		cout << "complex_1 == complex_2";
