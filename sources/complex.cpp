@@ -56,6 +56,7 @@ bool complex::operator==(complex &copy){
 		return true;
 	}
 	else
+	cout << "complex_1 != complex_2";
 	return false;
 }
 
