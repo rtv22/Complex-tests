@@ -22,7 +22,7 @@ public:
 	complex operator*(const complex&)const;
 	complex operator/(const complex&)const;
 	bool operator==(const complex&);
-	complex operator=(const complex&);
+	complex operator=(const complex&)const;
 	complex operator+=(const complex&);
 	complex operator-=(const complex&);
 	complex operator*=(const complex&);
