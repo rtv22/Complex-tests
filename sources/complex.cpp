@@ -38,7 +38,7 @@ complex::complex(const complex& copy)
 complex complex::operator*(complex &copy) {
 	complex rez;
 	rez.real = (real * copy.real) -  ( imaginary * copy.imaginary);
-	rez.imaginary = (imaginary * copy.imaginary)+ ( real * copy.real);
+	rez.imaginary = (real * copy.imaginary)+ ( imaginary * copy.real);
 	return rez;
 }
 
