@@ -37,15 +37,15 @@ complex::complex(const complex& copy)
 
 complex complex::operator*(complex &copy) {
 	complex rez;
-	rez.real = real * copy.real;
-	rez.imaginary = imaginary * copy.imaginary;
+	rez.real = (real * copy.real) -  ( imaginary * copy.imaginary);
+	rez.imaginary = (imaginary * copy.imaginary)+ ( real * copy.real);
 	return rez;
 }
 
 complex complex::operator/(complex &copy){
 	complex rez;
-	rez.real = real / copy.real;
-	rez.imaginary = imaginary / copy.imaginary;
+	rez.real = ((real * copy.real) + ( imaginary * copy.imaginary)) / ((copy.real*copy.real)+(copy.imaginary*copy.imaginary));
+	rez.imaginary = ((imaginary * copy.imaginary) - ( real * copy.real)) / ((copy.real*copy.real)+(copy.imaginary*copy.imaginary));
 	return rez;
 }
 
@@ -55,6 +55,7 @@ bool complex::operator==(complex &copy){
 		cout << "complex_1 == complex_2";
 		return true;
 	}
+	else
 	return false;
 }
 
