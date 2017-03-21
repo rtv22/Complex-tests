@@ -24,17 +24,17 @@ SCENARIO("copy", "[copy]")
 
 SCENARIO("mult", "[oper*]") 
 {
-	complex A(2, 0);
-	complex B(2, 0);
-	complex C(4, 0);
+	complex A(1, 2);
+	complex B(3, 4);
+	complex C(-5, 10);
 	REQUIRE(A*B==C);
 }
 
 SCENARIO("div", "oper/")
 {
-	complex A(1, 1);
-	complex B(1, 1);
-	complex C(1, 1);
+	complex A(1, 2;
+	complex B(3, 4);
+	complex C((11/25), (2/25));
 	REQUIRE(A/B==C);
 }
 
