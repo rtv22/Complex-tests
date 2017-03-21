@@ -3,7 +3,7 @@
 
 using namespace std;
 
-complex::complex() : real(0), imaginary (0)
+complex::complex() : real(0), imaginary(0)
 {
 }
 
@@ -22,11 +22,11 @@ complex::complex(double a, double b)
 
 /*void complex::set()
 {
-	cout << "Действительная часть КЧ: ";
-	cin >> real;
-	cout << "Мнимая часть КЧ: ";
-	cin >> imaginary;
-	cout << endl;
+cout << "Действительная часть КЧ: ";
+cin >> real;
+cout << "Мнимая часть КЧ: ";
+cin >> imaginary;
+cout << endl;
 }*/
 
 complex::complex(const complex& copy)
@@ -37,15 +37,15 @@ complex::complex(const complex& copy)
 
 complex complex::operator*(const complex &copy)const {
 	complex rez;
-	rez.real = (real * copy.real) -  ( imaginary * copy.imaginary);
+	rez.real = (real * copy.real) - (imaginary * copy.imaginary);
 	rez.imaginary = (imaginary  * copy.real) + (copy.imaginary * real);
 	return rez;
 }
 
 complex complex::operator/(const complex &copy)const{
 	complex rez;
-	rez.real = ((real * copy.real) + ( imaginary * copy.imaginary)) / ((copy.real*copy.real)+(copy.imaginary*copy.imaginary));
-	rez.imaginary = ((imaginary * copy.real) - ( real * copy.imaginary)) / ((copy.real*copy.real)+(copy.imaginary*copy.imaginary));
+	rez.real = ((real * copy.real) + (imaginary * copy.imaginary)) / ((copy.real*copy.real) + (copy.imaginary*copy.imaginary));
+	rez.imaginary = ((imaginary * copy.real) - (real * copy.imaginary)) / ((copy.real*copy.real) + (copy.imaginary*copy.imaginary));
 	return rez;
 }
 
@@ -56,18 +56,18 @@ bool complex::operator==(const complex &copy){
 		return true;
 	}
 	else
-	cout << "complex_1 != complex_2";
+		cout << "complex_1 != complex_2";
 	return false;
 }
 
-complex complex::operator=(const complex &copy)const{
+complex complex::operator=(const complex &copy){
 	real = copy.real;
 	imaginary = copy.imaginary;
 	return *this;
 }
 
 
-complex complex::sum(complex &a) const
+complex complex::sum(complex &a)
 {
 	return complex(real + a.real, imaginary + a.imaginary);
 }
@@ -75,21 +75,21 @@ complex complex::sum(complex &a) const
 /*
 void complex::print(std::ostream&stream) const
 {
-	if (imaginary > 0)
-	{
-		stream << real << " + " << imaginary << "i" << endl;
-	}
-	else
-	{
-		if (imaginary == 0)
-			stream << real << endl;
-		else
-			stream << real << " " << imaginary << "i" << endl;
-	}
+if (imaginary > 0)
+{
+stream << real << " + " << imaginary << "i" << endl;
+}
+else
+{
+if (imaginary == 0)
+stream << real << endl;
+else
+stream << real << " " << imaginary << "i" << endl;
+}
 }
 */
 
-complex complex::sub(complex &a) const
+complex complex::sub(complex &a)
 {
 	return complex(real - a.real, imaginary - a.imaginary);
 }
@@ -128,7 +128,7 @@ complex complex::div(int &a) const
 	return complex(real / a, imaginary / a);
 }
 
-ostream& operator <<(ostream& rez, complex& copy){
+ostream& operator <<(ostream& rez,const complex& copy){
 	if (copy.imaginary > 0)
 	{
 		rez << copy.real << " + " << copy.imaginary << "*i" << endl;
@@ -139,7 +139,7 @@ ostream& operator <<(ostream& rez, complex& copy){
 	}
 }
 
-istream& operator >> (istream& in,const complex& copy){
+istream& operator >> (istream& in, const complex& copy){
 	in >> copy.real;
 	in >> copy.imaginary;
 	return in;
