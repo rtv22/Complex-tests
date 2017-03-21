@@ -92,25 +92,25 @@ complex complex::sub(complex a) const
 	return complex(real - a.real, imaginary - a.imaginary);
 }
 
-complex complex::operator+=(complex &copy)const{
+complex complex::operator+=(complex &copy){
 	real += copy.real;
 	imaginary += copy.imaginary;
 	return *this;
 }
 
-complex complex::operator-=(complex &copy)const{
+complex complex::operator-=(complex &copy){
 	real -= copy.real;
 	imaginary -= copy.imaginary;
 	return *this;
 }
 
-complex complex::operator*=(complex &copy)const{
+complex complex::operator*=(complex &copy){
 	real *= copy.real;
 	imaginary *= copy.imaginary;
 	return *this;
 }
 
-complex complex::operator/=(complex &copy)const{
+complex complex::operator/=(complex &copy){
 	real /= copy.real;
 	imaginary /= copy.imaginary;
 	return *this;
