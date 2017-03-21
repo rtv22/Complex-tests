@@ -32,7 +32,7 @@ SCENARIO("mult", "[oper*]")
 
 SCENARIO("div", "oper/")
 {
-	complex A(1, 2;
+	complex A(1, 2);
 	complex B(3, 4);
 	complex C((11/25), (2/25));
 	REQUIRE(A/B==C);
