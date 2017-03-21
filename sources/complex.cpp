@@ -35,14 +35,14 @@ complex::complex(const complex& copy)
 	imaginary = copy.imaginary;
 }
 
-complex complex::operator*(complex &copy) {
+complex complex::operator*(complex &copy)const {
 	complex rez;
 	rez.real = (real * copy.real) -  ( imaginary * copy.imaginary);
 	rez.imaginary = (imaginary  * copy.real) + (copy.imaginary * real);
 	return rez;
 }
 
-complex complex::operator/(complex &copy){
+complex complex::operator/(complex &copy)const{
 	complex rez;
 	rez.real = ((real * copy.real) + ( imaginary * copy.imaginary)) / ((copy.real*copy.real)+(copy.imaginary*copy.imaginary));
 	rez.imaginary = ((imaginary * copy.real) - ( real * copy.imaginary)) / ((copy.real*copy.real)+(copy.imaginary*copy.imaginary));
@@ -104,13 +104,13 @@ complex complex::operator-=(complex &copy){
 	return *this;
 }
 
-complex complex::operator*=(complex &copy){
+complex complex::operator*=(complex &copy)const{
 	real *= copy.real;
 	imaginary *= copy.imaginary;
 	return *this;
 }
 
-complex complex::operator/=(complex &copy){
+complex complex::operator/=(complex &copy)const{
 	real /= copy.real;
 	imaginary /= copy.imaginary;
 	return *this;
