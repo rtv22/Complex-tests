@@ -11,8 +11,8 @@ public:
 	complex(double a, double b);
 	complex();
 	void set();
-	double r();
-	double i();
+	double r()const;
+	double i()const;
 	void print(std::ostream&) const;
 	complex sum(complex) const;
 	complex sub(complex) const;
