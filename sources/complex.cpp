@@ -3,15 +3,15 @@
 
 using namespace std;
 
-complex::complex()
+complex::complex() : real(0), imaginary (0)
 {
 }
 
-double complex::r(){
+double complex::r()const{
 	return real;
 }
 
-double complex::i(){
+double complex::i()const{
 	return imaginary;
 }
 complex::complex(double a, double b)
@@ -20,14 +20,14 @@ complex::complex(double a, double b)
 	imaginary = b;
 }
 
-void complex::set()
+/*void complex::set()
 {
 	cout << "Действительная часть КЧ: ";
 	cin >> real;
 	cout << "Мнимая часть КЧ: ";
 	cin >> imaginary;
 	cout << endl;
-}
+}*/
 
 complex::complex(const complex& copy)
 {
@@ -35,21 +35,21 @@ complex::complex(const complex& copy)
 	imaginary = copy.imaginary;
 }
 
-complex complex::operator*(complex &copy)const {
+complex complex::operator*(const complex &copy)const {
 	complex rez;
 	rez.real = (real * copy.real) -  ( imaginary * copy.imaginary);
 	rez.imaginary = (imaginary  * copy.real) + (copy.imaginary * real);
 	return rez;
 }
 
-complex complex::operator/(complex &copy)const{
+complex complex::operator/(const complex &copy)const{
 	complex rez;
 	rez.real = ((real * copy.real) + ( imaginary * copy.imaginary)) / ((copy.real*copy.real)+(copy.imaginary*copy.imaginary));
 	rez.imaginary = ((imaginary * copy.real) - ( real * copy.imaginary)) / ((copy.real*copy.real)+(copy.imaginary*copy.imaginary));
 	return rez;
 }
 
-bool complex::operator==(complex &copy){
+bool complex::operator==(const complex &copy)const{
 	complex rez;
 	if (real == copy.real && imaginary == copy.imaginary){
 		cout << "complex_1 == complex_2";
@@ -60,18 +60,19 @@ bool complex::operator==(complex &copy){
 	return false;
 }
 
-complex complex::operator=(complex &copy){
+complex complex::operator=(const complex &copy)const{
 	real = copy.real;
 	imaginary = copy.imaginary;
 	return *this;
 }
 
 
-complex complex::sum(complex a) const
+complex complex::sum(complex &a) const
 {
 	return complex(real + a.real, imaginary + a.imaginary);
 }
 
+/*
 void complex::print(std::ostream&stream) const
 {
 	if (imaginary > 0)
@@ -86,42 +87,43 @@ void complex::print(std::ostream&stream) const
 			stream << real << " " << imaginary << "i" << endl;
 	}
 }
+*/
 
-complex complex::sub(complex a) const
+complex complex::sub(complex &a) const
 {
 	return complex(real - a.real, imaginary - a.imaginary);
 }
 
-complex complex::operator+=(complex &copy){
+complex complex::operator+=(const complex &copy){
 	real += copy.real;
 	imaginary += copy.imaginary;
 	return *this;
 }
 
-complex complex::operator-=(complex &copy){
+complex complex::operator-=(const complex &copy){
 	real -= copy.real;
 	imaginary -= copy.imaginary;
 	return *this;
 }
 
-complex complex::operator*=(complex &copy){
+complex complex::operator*=(const complex &copy){
 	real *= copy.real;
 	imaginary *= copy.imaginary;
 	return *this;
 }
 
-complex complex::operator/=(complex &copy){
+complex complex::operator/=(const complex &copy){
 	real /= copy.real;
 	imaginary /= copy.imaginary;
 	return *this;
 }
 
-complex complex::mult(int a) const
+complex complex::mult(int &a) const
 {
 	return complex(real*a, imaginary*a);
 }
 
-complex complex::div(int a) const
+complex complex::div(int &a) const
 {
 	return complex(real / a, imaginary / a);
 }
@@ -135,4 +137,10 @@ ostream& operator <<(ostream& rez, complex& copy){
 	{
 		rez << copy.real << " " << copy.imaginary << "*i" << endl;
 	}
+}
+
+istream& operator >> (istream& in,const complex& copy){
+	in >> copy.real;
+	in >> copy.imaginary;
+	return in;
 }
